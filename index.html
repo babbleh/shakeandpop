@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>kt.pop</title>
+    <style>
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 50%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        body {
+            background-color: #FFFB90; 
+        }
+
+        /* Create a button container to hold the buttons */
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Style the buttons */
+        button {
+            background-color: #E3CC72;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            font-size: 50px;
+        }
+        
+        /* Style the restart button with a different background color */
+        #restartButton {
+            background-color: #E3CC72;
+        }
+    
+        #restartButton::before {
+            content: "\1F501";
+        }
+
+        button:focus {
+            outline: none;
+        }
+  </style>
+  <!-- FFFB7D is the color yellow frontrunner--> 
+</head>
+<body>
+    <img src="kt_deuces.png" alt="deuces" id="myImage">
+    <div class="button-container">
+      <button id="playPauseButton" onclick="toggleImage()">&#x25B6;</button>
+      <button id="restartButton" onclick="(() => {
+        const shouldToggle = true; // Or any boolean value
+        toggleImage(shouldToggle);
+      })()"></button>
+    </div>
+    <script>
+        var audio = new Audio('shake_n_pop.mp3');
+        var playButton = document.getElementById('playButton');
+        var pauseResumeButton = document.getElementById('pauseResumeButton');
+        var restartButton = document.getElementById('restartButton');
+
+        playPauseButton.addEventListener('click', function() {
+        if (audio.paused) {
+          audio.play();
+          playPauseButton.innerHTML = '&#x23F8;';
+        } else {
+          audio.pause();
+          playPauseButton.innerHTML = '&#x25B6;';
+        }
+      });
+    
+        restartButton.addEventListener('click', function() {
+          audio.currentTime = 0;
+          audio.play();
+        });
+
+        function toggleImage(shouldToggle) {
+            var img = document.getElementById("myImage");
+            if (img.src.match("kt_deuces") || shouldToggle == true) {
+                img.src = "kt_in_flight.png";
+            } else {
+                img.src = "kt_deuces.png";
+            }
+        }
+      </script>
+</body>
+</html>

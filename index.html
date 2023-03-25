@@ -21,23 +21,22 @@
 	    justify-content: center;
         }
 
-        /* Style the buttons */
+        /* Style the buttons #E3CC72 is good*/
         button {
-            background-color: #E3CC72;
-            color: white;
+            background-color: transparent;
+            color: black;
             border: none;
-            border-radius: 50%;
             width: 10vw;
             height: 10vw;
             font-size: 5vw;
             justify-content: center;
             align-items: center;
-	    text-align: center !important;
+            text-align: center !important;
         }
         
         /* Style the restart button with a different background color */
         #restartButton {
-            background-color: #E3CC72;
+            background-color: transparent;
         }
     
         #restartButton::before {
@@ -53,8 +52,8 @@
 <body>
     <img src="kt_deuces.png" alt="deuces" id="myImage">
     <div class="button-container">
-      <button id="playPauseButton" onclick="toggleImage()">&#x25B6;</button>
-      <button id="restartButton" onclick="(() => {
+      <button id="playPauseButton" onclick="toggleImage()" text-align="center">&#x25B6;</button>
+      <button id="restartButton" text-align="center" onclick="(() => {
         const shouldToggle = true; // Or any boolean value
         toggleImage(shouldToggle);
       })()"></button>

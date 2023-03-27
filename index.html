@@ -26,8 +26,8 @@
             background-color: transparent;
             color: black;
             border: none;
-            width: 12vw;
-            height: 12vw;
+            width: 10vw;
+            height: 10vw;
             font-size: 5vw;
             justify-content: center;
             align-items: center;
@@ -46,10 +46,41 @@
         button:focus {
             outline: none;
         }
+
+        /* CSS to make a fun title above katie's picture*/
+        .title {
+            text-align: center;
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #FFFB90;
+            background-color: #E3CC72;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        /* CSS to make a fun sub-title above katie's picture*/
+        .sub-title {
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #FFFB90;
+            background-color: #E3CC72;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            /* center the subtitle and make the box half the size*/
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        
   </style>
   <!-- FFFB7D is the color yellow frontrunner--> 
 </head>
 <body>
+    <h1 class="title">SHAKE AND POP</h1>
+    <h2 class="sub-title">~BY KT~</h2>
     <img src="kt_deuces.png" alt="deuces" id="myImage">
     <div class="button-container">
       <button id="playPauseButton" onclick="toggleImage()" text-align="center">&#x25B6;</button>
